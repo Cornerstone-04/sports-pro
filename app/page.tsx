@@ -5,19 +5,23 @@ import Link from "next/link"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-background dark:from-green-950/20 dark:to-background">
       {/* Hero Section */}
       <section className="relative py-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Welcome to <span className="text-green-600">SportsPro</span>
+          <h1 className="text-5xl font-bold text-foreground mb-6">
+            Welcome to <span className="text-green-600 dark:text-green-400">SportsPro</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             The ultimate platform connecting coaches, players, and sports enthusiasts. Manage your sports career, make
             payments, and share your journey.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+            <Button
+              asChild
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
+            >
               <Link href="/coaches/register">Join as Coach</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
@@ -30,12 +34,12 @@ export default function HomePage() {
       {/* Features Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Platform Features</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Platform Features</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-border">
               <CardHeader>
-                <UserCheck className="h-12 w-12 text-green-600 mb-4" />
-                <CardTitle>Coaches Hub</CardTitle>
+                <UserCheck className="h-12 w-12 text-green-600 dark:text-green-400 mb-4" />
+                <CardTitle className="text-foreground">Coaches Hub</CardTitle>
                 <CardDescription>Register, create profiles, and manage your coaching career</CardDescription>
               </CardHeader>
               <CardContent>
@@ -45,10 +49,10 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-border">
               <CardHeader>
-                <Users className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>Players Hub</CardTitle>
+                <Users className="h-12 w-12 text-blue-600 dark:text-blue-400 mb-4" />
+                <CardTitle className="text-foreground">Players Hub</CardTitle>
                 <CardDescription>Connect with coaches, track progress, and build your sports profile</CardDescription>
               </CardHeader>
               <CardContent>
@@ -58,10 +62,10 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-border">
               <CardHeader>
-                <CreditCard className="h-12 w-12 text-purple-600 mb-4" />
-                <CardTitle>Payment Hub</CardTitle>
+                <CreditCard className="h-12 w-12 text-purple-600 dark:text-purple-400 mb-4" />
+                <CardTitle className="text-foreground">Payment Hub</CardTitle>
                 <CardDescription>Secure payments through Paystack for training and services</CardDescription>
               </CardHeader>
               <CardContent>
@@ -71,10 +75,10 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-border">
               <CardHeader>
-                <FileText className="h-12 w-12 text-orange-600 mb-4" />
-                <CardTitle>Form Builder</CardTitle>
+                <FileText className="h-12 w-12 text-orange-600 dark:text-orange-400 mb-4" />
+                <CardTitle className="text-foreground">Form Builder</CardTitle>
                 <CardDescription>Create custom forms for registrations, surveys, and assessments</CardDescription>
               </CardHeader>
               <CardContent>
@@ -84,10 +88,10 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-border">
               <CardHeader>
-                <Video className="h-12 w-12 text-red-600 mb-4" />
-                <CardTitle>Video Hub</CardTitle>
+                <Video className="h-12 w-12 text-red-600 dark:text-red-400 mb-4" />
+                <CardTitle className="text-foreground">Video Hub</CardTitle>
                 <CardDescription>Upload and share training videos, highlights, and tutorials</CardDescription>
               </CardHeader>
               <CardContent>
@@ -97,10 +101,10 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow border-border">
               <CardHeader>
-                <Trophy className="h-12 w-12 text-yellow-600 mb-4" />
-                <CardTitle>Achievements</CardTitle>
+                <Trophy className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mb-4" />
+                <CardTitle className="text-foreground">Achievements</CardTitle>
                 <CardDescription>Track and showcase your sports achievements and milestones</CardDescription>
               </CardHeader>
               <CardContent>
@@ -114,24 +118,24 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-green-600 text-white">
+      <section className="py-16 px-4 bg-green-600 dark:bg-green-800 text-white">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
               <h3 className="text-4xl font-bold mb-2">500+</h3>
-              <p className="text-green-100">Active Coaches</p>
+              <p className="text-green-100 dark:text-green-200">Active Coaches</p>
             </div>
             <div>
               <h3 className="text-4xl font-bold mb-2">2,000+</h3>
-              <p className="text-green-100">Registered Players</p>
+              <p className="text-green-100 dark:text-green-200">Registered Players</p>
             </div>
             <div>
               <h3 className="text-4xl font-bold mb-2">50+</h3>
-              <p className="text-green-100">Sports Categories</p>
+              <p className="text-green-100 dark:text-green-200">Sports Categories</p>
             </div>
             <div>
               <h3 className="text-4xl font-bold mb-2">10,000+</h3>
-              <p className="text-green-100">Training Sessions</p>
+              <p className="text-green-100 dark:text-green-200">Training Sessions</p>
             </div>
           </div>
         </div>

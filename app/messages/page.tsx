@@ -160,30 +160,30 @@ export default function MessagesPage() {
       case "away":
         return "bg-yellow-500"
       default:
-        return "bg-gray-400"
+        return "bg-muted-foreground"
     }
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center gap-3 mb-6">
-          <MessageCircle className="h-8 w-8 text-blue-600" />
-          <h1 className="text-3xl font-bold text-gray-900">Messages</h1>
+          <MessageCircle className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+          <h1 className="text-3xl font-bold text-foreground">Messages</h1>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 h-[calc(100vh-200px)]">
           {/* Conversations List */}
-          <Card className="lg:col-span-1">
+          <Card className="lg:col-span-1 border-border">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-lg">Conversations</CardTitle>
-                <Button size="sm" variant="outline" className="bg-transparent">
+                <CardTitle className="text-lg text-foreground">Conversations</CardTitle>
+                <Button size="sm" variant="outline">
                   New Chat
                 </Button>
               </div>
               <div className="relative">
-                <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Search conversations..."
                   value={searchQuery}
@@ -198,8 +198,10 @@ export default function MessagesPage() {
                   <div
                     key={conversation.id}
                     onClick={() => setSelectedConversation(conversation.id)}
-                    className={`p-4 cursor-pointer hover:bg-gray-50 transition-colors ${
-                      selectedConversation === conversation.id ? "bg-blue-50 border-r-2 border-blue-600" : ""
+                    className={`p-4 cursor-pointer hover:bg-muted/50 transition-colors ${
+                      selectedConversation === conversation.id
+                        ? "bg-blue-50 dark:bg-blue-950/20 border-r-2 border-blue-600 dark:border-blue-400"
+                        : ""
                     }`}
                   >
                     <div className="flex items-start gap-3">
@@ -217,28 +219,32 @@ export default function MessagesPage() {
                           </AvatarFallback>
                         </Avatar>
                         <div
-                          className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${getStatusColor(conversation.participant.status)}`}
+                          className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-background ${getStatusColor(conversation.participant.status)}`}
                         />
                       </div>
 
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-1">
                           <div className="flex items-center gap-2">
-                            <h3 className="font-semibold text-sm truncate">{conversation.participant.name}</h3>
+                            <h3 className="font-semibold text-sm truncate text-foreground">
+                              {conversation.participant.name}
+                            </h3>
                             <Badge variant="outline" className="text-xs">
                               {conversation.participant.role}
                             </Badge>
                           </div>
                           <div className="flex items-center gap-1">
                             {conversation.isPinned && <Star className="h-3 w-3 text-yellow-500 fill-yellow-500" />}
-                            <span className="text-xs text-gray-500">
+                            <span className="text-xs text-muted-foreground">
                               {formatTime(conversation.lastMessage.timestamp)}
                             </span>
                           </div>
                         </div>
-                        <p className="text-sm text-gray-600 truncate">{conversation.lastMessage.content}</p>
+                        <p className="text-sm text-muted-foreground truncate">{conversation.lastMessage.content}</p>
                         {conversation.unreadCount > 0 && (
-                          <Badge className="mt-1 bg-blue-600 text-xs px-2 py-0">{conversation.unreadCount}</Badge>
+                          <Badge className="mt-1 bg-blue-600 dark:bg-blue-700 text-xs px-2 py-0">
+                            {conversation.unreadCount}
+                          </Badge>
                         )}
                       </div>
                     </div>
@@ -249,11 +255,11 @@ export default function MessagesPage() {
           </Card>
 
           {/* Chat Area */}
-          <Card className="lg:col-span-2 flex flex-col">
+          <Card className="lg:col-span-2 flex flex-col border-border">
             {selectedConv ? (
               <>
                 {/* Chat Header */}
-                <CardHeader className="pb-3 border-b">
+                <CardHeader className="pb-3 border-b border-border">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="relative">
@@ -270,26 +276,26 @@ export default function MessagesPage() {
                           </AvatarFallback>
                         </Avatar>
                         <div
-                          className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-white ${getStatusColor(selectedConv.participant.status)}`}
+                          className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-background ${getStatusColor(selectedConv.participant.status)}`}
                         />
                       </div>
                       <div>
-                        <h2 className="font-semibold">{selectedConv.participant.name}</h2>
-                        <p className="text-sm text-gray-500 capitalize">{selectedConv.participant.status}</p>
+                        <h2 className="font-semibold text-foreground">{selectedConv.participant.name}</h2>
+                        <p className="text-sm text-muted-foreground capitalize">{selectedConv.participant.status}</p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <Button size="sm" variant="outline" className="bg-transparent">
+                      <Button size="sm" variant="outline">
                         <Phone className="h-4 w-4" />
                       </Button>
-                      <Button size="sm" variant="outline" className="bg-transparent">
+                      <Button size="sm" variant="outline">
                         <Video className="h-4 w-4" />
                       </Button>
-                      <Button size="sm" variant="outline" className="bg-transparent">
+                      <Button size="sm" variant="outline">
                         <Calendar className="h-4 w-4" />
                       </Button>
-                      <Button size="sm" variant="outline" className="bg-transparent">
+                      <Button size="sm" variant="outline">
                         <MoreVertical className="h-4 w-4" />
                       </Button>
                     </div>
@@ -308,13 +314,13 @@ export default function MessagesPage() {
                           <div
                             className={`px-4 py-2 rounded-lg ${
                               message.senderId === "current-user"
-                                ? "bg-blue-600 text-white"
-                                : "bg-gray-100 text-gray-900"
+                                ? "bg-blue-600 dark:bg-blue-700 text-white"
+                                : "bg-muted text-foreground"
                             }`}
                           >
                             <p className="text-sm">{message.content}</p>
                           </div>
-                          <p className="text-xs text-gray-500 mt-1 px-1">{formatTime(message.timestamp)}</p>
+                          <p className="text-xs text-muted-foreground mt-1 px-1">{formatTime(message.timestamp)}</p>
                         </div>
                       </div>
                     ))}
@@ -322,9 +328,9 @@ export default function MessagesPage() {
                 </CardContent>
 
                 {/* Message Input */}
-                <div className="p-4 border-t">
+                <div className="p-4 border-t border-border">
                   <div className="flex items-center gap-2">
-                    <Button size="sm" variant="outline" className="bg-transparent">
+                    <Button size="sm" variant="outline">
                       <Paperclip className="h-4 w-4" />
                     </Button>
                     <div className="flex-1 relative">
@@ -348,9 +354,9 @@ export default function MessagesPage() {
             ) : (
               <div className="flex-1 flex items-center justify-center">
                 <div className="text-center">
-                  <MessageCircle className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Select a conversation</h3>
-                  <p className="text-gray-500">Choose a conversation from the list to start messaging</p>
+                  <MessageCircle className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Select a conversation</h3>
+                  <p className="text-muted-foreground">Choose a conversation from the list to start messaging</p>
                 </div>
               </div>
             )}
