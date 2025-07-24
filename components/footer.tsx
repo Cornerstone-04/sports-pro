@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "luci
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t">
+    <footer className="bg-background border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -15,25 +15,25 @@ export function Footer() {
             <div className="flex space-x-4">
               <Link
                 href="https://facebook.com"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
                 href="https://twitter.com"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-blue-400 dark:hover:text-blue-300 transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
                 href="https://instagram.com"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-pink-600 dark:hover:text-pink-400 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
                 href="https://youtube.com"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-red-600 dark:hover:text-red-400 transition-colors"
               >
                 <Youtube className="h-5 w-5" />
               </Link>
@@ -45,22 +45,34 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-foreground">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/coaches" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/coaches"
+                  className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                >
                   Find Coaches
                 </Link>
               </li>
               <li>
-                <Link href="/players" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/players"
+                  className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                >
                   Join Players
                 </Link>
               </li>
               <li>
-                <Link href="/payments" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/payments"
+                  className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                >
                   Make Payment
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/about"
+                  className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                >
                   About Us
                 </Link>
               </li>
@@ -72,22 +84,34 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-foreground">Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/forms" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/forms"
+                  className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                >
                   Form Builder
                 </Link>
               </li>
               <li>
-                <Link href="/videos" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/videos"
+                  className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                >
                   Video Upload
                 </Link>
               </li>
               <li>
-                <Link href="/training" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/training"
+                  className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                >
                   Training Programs
                 </Link>
               </li>
               <li>
-                <Link href="/support" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/support"
+                  className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                >
                   Support
                 </Link>
               </li>

@@ -33,7 +33,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors font-medium"
               >
                 {item.label}
               </Link>
@@ -42,7 +42,10 @@ export function Navbar() {
             <Button asChild variant="outline">
               <Link href="/login">Login</Link>
             </Button>
-            <Button asChild className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600">
+            <Button
+              asChild
+              className="bg-green-600 hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-500 text-white"
+            >
               <Link href="/register">Sign Up</Link>
             </Button>
           </div>
@@ -56,13 +59,13 @@ export function Navbar() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent side="right" className="bg-background border-border">
                 <div className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                      className="text-muted-foreground hover:text-green-600 dark:hover:text-green-400 transition-colors font-medium"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
@@ -73,7 +76,7 @@ export function Navbar() {
                   </Button>
                   <Button
                     asChild
-                    className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
+                    className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-500 text-white"
                   >
                     <Link href="/register">Sign Up</Link>
                   </Button>

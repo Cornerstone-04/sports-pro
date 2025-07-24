@@ -20,11 +20,16 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
+              className="bg-green-600 hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-500 text-white"
             >
               <Link href="/coaches/register">Join as Coach</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-green-600 text-green-600 hover:bg-green-50 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-950/20 bg-transparent"
+            >
               <Link href="/players/register">Join as Player</Link>
             </Button>
           </div>
@@ -36,11 +41,13 @@ export default function HomePage() {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Platform Features</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow border-border">
+            <Card className="hover:shadow-lg transition-shadow border-border bg-card hover:bg-accent/50">
               <CardHeader>
                 <UserCheck className="h-12 w-12 text-green-600 dark:text-green-400 mb-4" />
                 <CardTitle className="text-foreground">Coaches Hub</CardTitle>
-                <CardDescription>Register, create profiles, and manage your coaching career</CardDescription>
+                <CardDescription className="text-muted-foreground">
+                  Register, create profiles, and manage your coaching career
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button asChild variant="outline" className="w-full bg-transparent">
@@ -49,11 +56,13 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow border-border">
+            <Card className="hover:shadow-lg transition-shadow border-border bg-card hover:bg-accent/50">
               <CardHeader>
                 <Users className="h-12 w-12 text-blue-600 dark:text-blue-400 mb-4" />
                 <CardTitle className="text-foreground">Players Hub</CardTitle>
-                <CardDescription>Connect with coaches, track progress, and build your sports profile</CardDescription>
+                <CardDescription className="text-muted-foreground">
+                  Connect with coaches, track progress, and build your sports profile
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button asChild variant="outline" className="w-full bg-transparent">
@@ -62,11 +71,13 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow border-border">
+            <Card className="hover:shadow-lg transition-shadow border-border bg-card hover:bg-accent/50">
               <CardHeader>
                 <CreditCard className="h-12 w-12 text-purple-600 dark:text-purple-400 mb-4" />
                 <CardTitle className="text-foreground">Payment Hub</CardTitle>
-                <CardDescription>Secure payments through Paystack for training and services</CardDescription>
+                <CardDescription className="text-muted-foreground">
+                  Secure payments through Paystack for training and services
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button asChild variant="outline" className="w-full bg-transparent">
@@ -75,11 +86,13 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow border-border">
+            <Card className="hover:shadow-lg transition-shadow border-border bg-card hover:bg-accent/50">
               <CardHeader>
                 <FileText className="h-12 w-12 text-orange-600 dark:text-orange-400 mb-4" />
                 <CardTitle className="text-foreground">Form Builder</CardTitle>
-                <CardDescription>Create custom forms for registrations, surveys, and assessments</CardDescription>
+                <CardDescription className="text-muted-foreground">
+                  Create custom forms for registrations, surveys, and assessments
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button asChild variant="outline" className="w-full bg-transparent">
@@ -88,11 +101,13 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow border-border">
+            <Card className="hover:shadow-lg transition-shadow border-border bg-card hover:bg-accent/50">
               <CardHeader>
                 <Video className="h-12 w-12 text-red-600 dark:text-red-400 mb-4" />
                 <CardTitle className="text-foreground">Video Hub</CardTitle>
-                <CardDescription>Upload and share training videos, highlights, and tutorials</CardDescription>
+                <CardDescription className="text-muted-foreground">
+                  Upload and share training videos, highlights, and tutorials
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button asChild variant="outline" className="w-full bg-transparent">
@@ -101,11 +116,13 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow border-border">
+            <Card className="hover:shadow-lg transition-shadow border-border bg-card hover:bg-accent/50">
               <CardHeader>
                 <Trophy className="h-12 w-12 text-yellow-600 dark:text-yellow-400 mb-4" />
                 <CardTitle className="text-foreground">Achievements</CardTitle>
-                <CardDescription>Track and showcase your sports achievements and milestones</CardDescription>
+                <CardDescription className="text-muted-foreground">
+                  Track and showcase your sports achievements and milestones
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button asChild variant="outline" className="w-full bg-transparent">
